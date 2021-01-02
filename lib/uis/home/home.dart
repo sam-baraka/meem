@@ -8,6 +8,9 @@ class Home extends StatelessWidget {
       child: Container(
         color: Colors.red,
       ),
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("meem!"),
+      ),
     );
   }
 }
