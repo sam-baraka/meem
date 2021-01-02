@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:meem/uis/uis.dart';
+import 'package:rive/rive.dart';
 
 void main() {
   runApp(MeemApp());
