@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intro_slider/dot_animation_enum.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
+import 'package:meem/uis/home/home.dart';
 
 class IntroScreen extends StatefulWidget {
   IntroScreen({Key key}) : super(key: key);
@@ -50,8 +51,7 @@ class IntroScreenState extends State<IntroScreen> {
   }
 
   void onDonePress() {
-    // Back to the first tab
-    this.goToTab(0);
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
   }
 
   void onTabChangeCompleted(index) {
