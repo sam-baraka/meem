@@ -32,6 +32,7 @@ dependencies:
   intro_slider: ^2.3.3
   google_fonts: ^1.1.1
   flutter_bloc: ^6.1.1
+  hydrated_bloc: ^6.1.0
 
 dev_dependencies:
   flutter_test:
