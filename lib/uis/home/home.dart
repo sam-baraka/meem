@@ -5,7 +5,7 @@ import 'package:meem/cubits/cubits.dart';
 import 'package:meem/uis/uis.dart';
 
 class Home extends StatelessWidget {
-  List<Widget> tabs = [HomeTab(), CreateTab(), SettingsTab()];
+  final List<Widget> tabs = [HomeTab(), CreateTab(), SettingsTab()];
   @override
   Widget build(BuildContext context) {
     TabCubit tabCubit = BlocProvider.of<TabCubit>(context);
