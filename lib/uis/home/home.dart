@@ -11,7 +11,7 @@ class Home extends StatelessWidget {
     TabCubit tabCubit = BlocProvider.of<TabCubit>(context);
     return CupertinoTabScaffold(
       tabBuilder: (BuildContext context, int index) {
-        return tabs[index];
+        return tabs[context.read<TabCubit>().state];
       },
       tabBar: CupertinoTabBar(
         onTap: (value) {
