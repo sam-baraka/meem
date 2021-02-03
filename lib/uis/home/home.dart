@@ -16,6 +16,7 @@ class Home extends StatelessWidget {
         return tabs[context.watch<TabCubit>().state];
       },
       tabBar: CupertinoTabBar(
+        currentIndex: context.watch<TabCubit>().state,
         onTap: (value) {
           //Change the value based [TabCubit()] state
           tabCubit.changeTab(index: value);
