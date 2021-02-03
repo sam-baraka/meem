@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:hydrated_bloc/hydrated_bloc.dart' as hydratedBloc;
+import 'package:flutter_bloc/flutter_bloc.dart' as bloc;
+import 'package:meem/bloc/simple_bloc_observer.dart';
 import 'package:meem/uis/intro/intro_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  HydratedBloc.storage = await HydratedStorage.build();
+  hydratedBloc.HydratedBloc.storage =
+      await hydratedBloc.HydratedStorage.build();
+  bloc.Bloc.observer = SimpleBlocObserver();
   runApp(MeemApp());
 }
 
