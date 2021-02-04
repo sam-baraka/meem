@@ -10,7 +10,6 @@ class Home extends StatelessWidget {
   final List<String> tabTitles = ['Home', 'Create', 'Settings'];
   @override
   Widget build(BuildContext context) {
-    TabCubit tabCubit = BlocProvider.of<TabCubit>(context);
     return Scaffold(
       appBar: CupertinoNavigationBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -28,7 +27,7 @@ class Home extends StatelessWidget {
         currentIndex: context.watch<TabCubit>().state,
         onTap: (value) {
           //Change the value based [TabCubit()] state
-          tabCubit.changeTab(index: value);
+          context.read<TabCubit>().changeTab(index: value);
         },
         items: [
           BottomNavigationBarItem(
