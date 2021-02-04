@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meem/uis/widgets/meme_widget.dart';
 
 class HomeTab extends StatelessWidget {
   @override
@@ -6,29 +7,7 @@ class HomeTab extends StatelessWidget {
     return PageView(
       scrollDirection: Axis.vertical,
       physics: BouncingScrollPhysics(),
-      children: [
-        Container(
-          color: Colors.red,
-        ),
-        Container(
-          color: Colors.orange,
-        ),
-        Container(
-          color: Colors.yellow,
-        ),
-        Container(
-          color: Colors.green,
-        ),
-        Container(
-          color: Colors.blue,
-        ),
-        Container(
-          color: Colors.indigo,
-        ),
-        Container(
-          color: Colors.cyan,
-        ),
-      ],
+      children: [MemeWidget()],
     );
   }
 }
