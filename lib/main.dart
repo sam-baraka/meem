@@ -13,6 +13,8 @@ void main() async {
   bloc.Bloc.observer = SimpleBlocObserver();
   runApp(bloc.MultiBlocProvider(providers: [
     bloc.BlocProvider<TabCubit>(create: (context) => TabCubit(0)),
+    bloc.BlocProvider<ThemeCubit>(
+        create: (context) => ThemeCubit(ThemeData.light())),
   ], child: MeemApp()));
 }
 
@@ -20,6 +22,7 @@ class MeemApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: context.watch<ThemeCubit>().state,
       home: IntroScreen(),
     );
   }
