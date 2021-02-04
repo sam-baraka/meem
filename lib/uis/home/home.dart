@@ -7,10 +7,14 @@ import 'package:meem/uis/uis.dart';
 class Home extends StatelessWidget {
   //List of the widget to appear as the main screen content
   final List<Widget> tabs = [HomeTab(), CreateTab(), SettingsTab()];
+  final List<String> tabTitles = ['Home', 'Create', 'Settings'];
   @override
   Widget build(BuildContext context) {
     TabCubit tabCubit = BlocProvider.of<TabCubit>(context);
     return Scaffold(
+      appBar: CupertinoNavigationBar(
+        middle: Text(tabTitles[context.watch<TabCubit>().state]),
+      ),
       //Show the tabs according to the value in [TabCubit()] state
       body: tabs[context.watch<TabCubit>().state],
       bottomNavigationBar: CupertinoTabBar(
