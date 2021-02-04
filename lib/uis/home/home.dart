@@ -13,7 +13,14 @@ class Home extends StatelessWidget {
     TabCubit tabCubit = BlocProvider.of<TabCubit>(context);
     return Scaffold(
       appBar: CupertinoNavigationBar(
-        middle: Text(tabTitles[context.watch<TabCubit>().state]),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        middle: Text(
+          tabTitles[context.watch<TabCubit>().state],
+          style: TextStyle(
+              color: context.watch<ThemeCubit>().state == ThemeData.dark()
+                  ? Colors.white
+                  : Colors.black),
+        ),
       ),
       //Show the tabs according to the value in [TabCubit()] state
       body: tabs[context.watch<TabCubit>().state],
