@@ -7,7 +7,12 @@ class HomeTab extends StatelessWidget {
     return PageView(
       scrollDirection: Axis.vertical,
       physics: BouncingScrollPhysics(),
-      children: [MemeWidget()],
+      children: [
+        MemeWidget(),
+        MemeWidget(),
+        MemeWidget(),
+        MemeWidget(),
+      ],
     );
   }
 }
